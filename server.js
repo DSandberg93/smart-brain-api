@@ -13,10 +13,10 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection : {
-        connectionString: process.env.DATABASE_URL,
-        ssl: true
-        // host: '127.0.0.1',
-        // database: 'smartbrain', // mMake sure you're connecting to the correct database
+        connectionString: process.env.DATABASE_URL, // Setup for connecting to pg specifically for deploying on Heroku with Heroku Postgres
+        ssl: true // Setup for connecting to pg specifically for deploying on Heroku with Heroku Postgres
+        // host: '127.0.0.1', // Used primarily for development
+        // database: 'smartbrain', // Make sure you're connecting to the correct database
         // user: 'postgres',  // Make sure you're using the correct user
         // password: process.env.DB_PASSWORD  // Set environment variable DB_PASSWORD to the password for your database or switch out process.env for your database password here
         // password: secret.daPassword  // This is an alternative to using environment variables

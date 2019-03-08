@@ -13,11 +13,12 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection : {
-        host: 'postgresql-shaped-70698',
+        host: process.env.DATABASE_URL,
+        ssl: true
         // host: '127.0.0.1',
-        database: 'smartbrain', // mMake sure you're connecting to the correct database
-        user: 'postgres',  // Make sure you're using the correct user
-        password: process.env.DB_PASSWORD  // Set environment variable DB_PASSWORD to the password for your database or switch out process.env for your database password here
+        // database: 'smartbrain', // mMake sure you're connecting to the correct database
+        // user: 'postgres',  // Make sure you're using the correct user
+        // password: process.env.DB_PASSWORD  // Set environment variable DB_PASSWORD to the password for your database or switch out process.env for your database password here
         // password: secret.daPassword  // This is an alternative to using environment variables
     }
 });
